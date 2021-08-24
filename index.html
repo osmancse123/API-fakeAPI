@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<ol id="user">
+		
+	</ol>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+<script>
+	// axios.get("https://jsonplaceholder.typicode.com/users")
+	// .then((res) => {
+	// 	 console.log(res)
+	// })
+	// .catch((err) => {
+	// 	console.log(err);
+	// })
+
+	axios.get("https://jsonplaceholder.typicode.com/users")
+	.then((res) => {
+		res.data.forEach(x => {
+			// console.log(x)
+			document.getElementById('user').innerHTML += '<li>' + x.name + '</li>';
+		})
+	})
+	.catch((err) => {
+		console.log(err);
+	});
+
+
+</script>
+</body>
+</html>
